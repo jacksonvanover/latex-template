@@ -1,0 +1,118 @@
+\documentclass[conference]{IEEEtran}
+
+% packages
+\usepackage{amsmath}    %% math text
+\usepackage{cleveref}   %% for references
+\usepackage{caption}
+\usepackage{subcaption} %% For complex figures with subfigures/subcaptions
+\usepackage{listings}   %% For code listing
+\usepackage{graphicx}   %% For inserting images
+\usepackage{enumitem}   %% control over layout of itemize, enumerate, description environments
+\usepackage{xspace}
+\usepackage{tcolorbox}
+\usepackage{soul}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{highlighter}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{balance}
+\usepackage{booktabs}
+
+% bibliography
+\usepackage[square,numbers,sort]{natbib}
+%\bibliographystyle{IEEEtranN}
+\bibliographystyle{plainnat} % preferred so that entries are alphabetically ordered
+
+% CREF
+\crefname{section}{Section}{Sections}
+\crefname{table}{Table}{Tables}
+\crefname{figure}{Figure}{Figures}
+\crefname{subfigure}{Figure}{Figures}
+\crefname{definition}{Definition}{Definitions}
+\crefname{equation}{Equation}{Equations}
+\crefname{example}{Ex.}{Examples}
+\crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{line}{Line}{Lines}
+
+% Editing, Revising, etc...
+\newcommand{\todo}[1]{{\hl{\textbf{TODO:} #1}}}
+\newcommand{\changed}[1]{{\color{blue}#1}}
+\newcommand{\note}[1]{{\color{blue}\textbf{\hl{NOTE:} }#1}}
+
+% algorithm listings
+\newenvironment{workflow}[1][htb]
+  {\renewcommand{\algorithmcfname}{Workflow}% Update algorithm name
+   \begin{algorithm}[#1]%
+  }{\end{algorithm}}
+
+% code listings
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
+\lstdefinestyle{mystyle}{
+    basicstyle=\setlength{\lineskip}{0pt}\ttfamily\footnotesize,
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    aboveskip=1.5em,
+    belowskip=1em,
+    escapeinside={/*@}{@*/},
+}
+\lstset{style=mystyle}
+
+% RQs
+\newlist{rqs}{enumerate}{1}
+\setlist[rqs,1]{label={\bfseries RQ\arabic*},align=left}
+
+% text macros
+\newcommand{\tool}{\textsc{Prose}\xspace}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\begin{document}
+
+% \author[Jackson Vanover]{Jackson Vanover}
+%   \affiliation{%
+%   \institution{University of California, Davis}
+%   \country{United States of America}}
+% \email{jdvanover@ucdavis.edu}
+
+% \author[Alper Altuntas]{Alper Altuntas}
+%   \affiliation{%
+%   \institution{National Center for Atmospheric Research}
+%   \country{United States of America}}
+% \email{altuntas@ucar.edu}
+
+% \author[Cindy Rubio-Gonz\'alez]{Cindy Rubio-Gonz\'alez}
+%   \affiliation{
+%   \institution{University of California, Davis}
+%   \country{United States of America}}
+% \email{crubio@ucdavis.edu}
+
+\title{Null}
+\maketitle
+\begin{abstract}
+\citet{gibran2012prophet}
+\end{abstract}
+
+\input{intro}
+
+\balance
+{\small
+\bibliography{dblp}
+}
+\end{document}

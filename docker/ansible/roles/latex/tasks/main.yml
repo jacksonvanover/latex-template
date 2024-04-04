@@ -1,0 +1,13 @@
+---
+- name: Install latex packages
+  apt:
+    name={{ item}} state=installed
+  with_items:
+    - texlive-latex-base
+    - texlive-latex-recommended
+    - texlive-latex-extra
+    - texlive-generic-extra
+    - texlive-science
+    - make
+    - texlive-fonts-extra
+  become: true

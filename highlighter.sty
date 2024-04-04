@@ -1,0 +1,30 @@
+% required packages
+\usepackage{atbegshi}
+\usepackage{ifthen}
+\usepackage{tikz}
+
+\usetikzlibrary{calc}
+
+% change this to customize the appearance of the highlight
+\tikzstyle{highlighterRed} = [
+  red,
+  line width = \baselineskip,
+  opacity = 0.2,
+]
+
+\tikzstyle{highlighterGreen} = [
+  green,
+  line width = \baselineskip,
+  opacity = 0.2,
+]
+
+% enable these two lines for a more human-looking highlight
+%\usetikzlibrary{decorations.pathmorphing}
+%\tikzstyle{highlighter} += [decorate, decoration = random steps]
+
+% implementation of the core highlighting logic; do not change!
+\newcommand{\tikzhighlightanchor}[2]{\ensuremath{\vcenter{\hbox{\tikz[remember picture, overlay]{\coordinate (#1 highlight);#2}}}}}
+\newcommand{\bhred}[0]{\tikzhighlightanchor{begin}{}}
+\newcommand{\ehred}[0]{\tikzhighlightanchor{end}{\draw[highlighterRed] (begin highlight) -- (end highlight);}}
+\newcommand{\bhgreen}[0]{\tikzhighlightanchor{begin}{}}
+\newcommand{\ehgreen}[0]{\tikzhighlightanchor{end}{\draw[highlighterGreen] (begin highlight) -- (end highlight);}}
